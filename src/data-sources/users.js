@@ -1,6 +1,7 @@
 import type {User} from "../ducks/userDuck";
+import db from '../db/index';
 
-export const fetchUser = async (id: string, db: any): Promise<User> => {
+export const fetchUser = async (id: string): Promise<User> => {
     const dbUser = await db.user.get(1);
     return {
         firstName: (dbUser || {}).firstName || null,
@@ -8,7 +9,7 @@ export const fetchUser = async (id: string, db: any): Promise<User> => {
     }
 };
 
-export const saveUser = async (user: User, db: any): Promise<void> => {
+export const saveUser = async (user: User): Promise<void> => {
     const dbUser = {...user, id: 1};
     return db.user.put(dbUser);
 };

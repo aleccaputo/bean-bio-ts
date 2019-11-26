@@ -70,20 +70,20 @@ export const {
 
 export default userSlice.reducer;
 
-export const fetchUserFromDb = (userId: number | string, db: any) => async (dispatch: ThunkDispatch<Action>) => {
+export const fetchUserFromDb = (userId: number | string) => async (dispatch: ThunkDispatch<Action>) => {
     dispatch(userFetchRequest());
     try {
-        const user = await fetchUser(userId, db);
+        const user = await fetchUser(userId);
         dispatch(userFetchSuccess(user))
     } catch (e) {
         dispatch(userFetchFail(true))
     }
 };
 
-export const saveUserToDb = (user: User, db: any) => async (dispatch: ThunkDispatch<Action>) => {
+export const saveUserToDb = (user: User) => async (dispatch: ThunkDispatch<Action>) => {
     dispatch(userFetchRequest());
     try {
-        await saveUser(user, db);
+        await saveUser(user);
         dispatch(userFetchSuccess(user));
     } catch (e) {
         dispatch(userFetchFail(true))

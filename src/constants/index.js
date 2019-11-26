@@ -8,7 +8,8 @@ export const BREW_METHODS = {
     HARIO: 'Hario V60',
     COLD_BREW: 'Cold Brew',
     TURKISH: 'Turkish',
-    COWBOY: 'Cowboy'
+    COWBOY: 'Cowboy',
+    POUR_OVER: 'Pour Over'
 };
 
 export const ROAST_LEVELS = {
@@ -27,5 +28,6 @@ export const COUNTRIES_OF_ORIGIN = {
     INDONESIA: 'Indonesia',
     COLUMBIA: 'Colombia',
     VIETNAM: 'Vietnam',
-    BRAZIL: 'Brazil'
+    BRAZIL: 'Brazil',
+    COSTA_RICA: 'Costa Rica'
 };

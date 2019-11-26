@@ -82,20 +82,20 @@ export const {
 
 export default preferencesSlice.reducer;
 
-export const fetchPreferencesFromDb = (userId: number | string, db: any) => async (dispatch: ThunkDispatch<Action>) => {
+export const fetchPreferencesFromDb = (userId: number | string) => async (dispatch: ThunkDispatch<Action>) => {
     dispatch(preferencesFetchRequest());
     try {
-        const preferences = await fetchPreferences(userId, db);
+        const preferences = await fetchPreferences(userId);
         dispatch(preferencesFetchSuccess(preferences))
     } catch (e) {
         dispatch(preferencesFetchFail(true))
     }
 };
 
-export const savePreferencesToDb = (preferences: Preferences, db: any) => async (dispatch: ThunkDispatch<Action>) => {
+export const savePreferencesToDb = (preferences: Preferences) => async (dispatch: ThunkDispatch<Action>) => {
     dispatch(preferencesFetchRequest());
     try {
-        await savePreferences(preferences, db);
+        await savePreferences(preferences);
         dispatch(preferencesFetchSuccess(preferences));
     } catch (e) {
         dispatch(preferencesFetchFail(true))

@@ -1,6 +1,7 @@
 import type {Preferences} from '../ducks/preferencesDuck';
+import db from '../db/index'
 
-export const fetchPreferences = async (userId, db): Promise<Preferences> => {
+export const fetchPreferences = async (userId): Promise<Preferences> => {
     const preferences = await db.preferences.where({userId: 1}).first();
     return {
         roastLevel: (preferences || {}).roastLevel,
@@ -11,4 +12,4 @@ export const fetchPreferences = async (userId, db): Promise<Preferences> => {
     }
 };
 
-export const savePreferences = async (preferences: Preferences, db): Promise<void> => db.preferences.put(preferences);
+export const savePreferences = async (preferences: Preferences): Promise<void> => db.preferences.put(preferences);

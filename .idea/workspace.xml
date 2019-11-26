@@ -1,10 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/action-buttons/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/content-layout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/is-existing-user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/is-new-user/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/navigation/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screen-layout/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data-sources/coffees.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/img/coffee-bean.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/workflow/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data-sources/preferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/preferences.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data-sources/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ducks/preferencesDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/preferencesDuck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ducks/userDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/userDuck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/init/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/init/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/preferences/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/preferences/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/welcome/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/welcome/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path>$PROJECT_DIR$/node_modules/flow-bin</exe-path>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1U1NmOYjgHpOpgmLZHqKjhuBQMa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="ts.external.directory.path" value="C:\Users\Alec Caputo\AppData\Local\JetBrains\Toolbox\apps\WebStorm\ch-0\192.7142.35\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alec Caputo\Documents\GitHub\bean-bio\src\img" />
+      <recent name="C:\Users\Alec Caputo\Documents\GitHub\bean-bio\public" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="" />
+      <created>1574621725229</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574621725229</updated>
+      <workItem from="1574621729772" duration="2565000" />
+      <workItem from="1574721105056" duration="21615000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.test.js</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

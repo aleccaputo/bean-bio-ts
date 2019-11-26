@@ -1,16 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import type {UserState} from '../../ducks/userDuck';
 import {TextField, Typography, MenuItem, Button} from '@material-ui/core';
 import type {Preferences, PreferencesState} from '../../ducks/preferencesDuck';
 import {BREW_METHODS, ROAST_LEVELS, COUNTRIES_OF_ORIGIN} from '../../constants';
 import {savePreferencesToDb} from '../../ducks/preferencesDuck';
-import {Redirect} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+import ContentLayout from '../../components/content-layout';
+import {makeStyles} from '@material-ui/styles';
+import {NEW_USER} from '../../workflow';
 
-const UserPreferences = ({db}) => {
+const useStyles = makeStyles(theme => ({
+    select: {
+        width: '50%',
+        [theme.breakpoints.down('xs')]: {
+            width: '90%'
+        }
+    }
+}));
+const UserPreferences = () => {
     const user: UserState = useSelector(state => state.user);
     const preferences: PreferencesState = useSelector(state => state.preferences);
     const dispatch = useDispatch();
+    const classes = useStyles();
+    const history = useHistory();
     const [formPrefs: Preferences, setFormPrefs] = useState({
         roastLevel: preferences.roastLevel || '',
         brewMethod: preferences.brewMethod || '',
@@ -18,20 +31,23 @@ const UserPreferences = ({db}) => {
         company: preferences.company || ''
     });
 
+    useEffect(() => {
+        if(!user.firstName || !user.lastName) {
+            history.push(NEW_USER);
+        }
+    }, [user.firstName, user.lastName]);
     const formIsValid = formPrefs.roastLevel && formPrefs.company && formPrefs.brewMethod && formPrefs.roastLevel;
 
-    return preferences.fetchSuccess && preferences.roastLevel && preferences.brewMethod && preferences.origin && preferences.company
-        ? <Redirect to={'/'}/>
-        : (
-            <div>
+    return (
+            <ContentLayout spacing={2}>
                 <Typography
                     variant={'h5'}>{`Thanks, ${user.firstName}. Please select some initial preferences.`}</Typography>
                 <TextField
+                    className={classes.select}
                     label={'Favorite Brew Method?'}
                     value={formPrefs.brewMethod}
                     onChange={e => setFormPrefs({...formPrefs, brewMethod: e.target.value})}
                     select={true}
-                    fullWidth={true}
                 >
                     {
                         Object.keys(BREW_METHODS).map(method => (
@@ -42,11 +58,11 @@ const UserPreferences = ({db}) => {
                     }
                 </TextField>
                 <TextField
+                    className={classes.select}
                     label={'Favorite Roast Level?'}
                     value={formPrefs.roastLevel}
                     onChange={e => setFormPrefs({...formPrefs, roastLevel: e.target.value})}
                     select={true}
-                    fullWidth={true}
                 >
                     {
                         Object.keys(ROAST_LEVELS).map(level => (
@@ -57,11 +73,11 @@ const UserPreferences = ({db}) => {
                     }
                 </TextField>
                 <TextField
+                    className={classes.select}
                     label={'Favorite Country of Origin?'}
                     value={formPrefs.origin}
                     onChange={e => setFormPrefs({...formPrefs, origin: e.target.value})}
                     select={true}
-                    fullWidth={true}
                 >
                     {
                         Object.keys(COUNTRIES_OF_ORIGIN).map(country => (
@@ -72,20 +88,20 @@ const UserPreferences = ({db}) => {
                     }
                 </TextField>
                 <TextField
+                    className={classes.select}
                     label={'Favorite Company?'}
                     value={formPrefs.company}
                     onChange={e => setFormPrefs({...formPrefs, company: e.target.value})}
-                    fullWidth={true}
                 />
                 <Button
-                    onClick={() => dispatch(savePreferencesToDb({...formPrefs, userId: user.id}, db))}
+                    onClick={() => dispatch(savePreferencesToDb({...formPrefs, userId: user.id}))}
                     disabled={preferences.isFetching || !formIsValid}
                     color={'primary'}
                     variant={'contained'}
                 >
                     {'Save'}
                 </Button>
-            </div>
+            </ContentLayout>
         )
 };
 

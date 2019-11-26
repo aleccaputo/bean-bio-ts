@@ -7,10 +7,7 @@ import {CircularProgress} from "@material-ui/core";
 import {Redirect} from "react-router-dom";
 import type {PreferencesState} from '../../ducks/preferencesDuck';
 
-type Props = {
-    db: any
-}
-const Welcome = ({db}: Props) => {
+const Welcome = () => {
     const user: UserState = useSelector(state => state.user);
     const preferences: PreferencesState = useSelector(state => state.preferences);
     const dispatch = useDispatch();
@@ -18,10 +15,10 @@ const Welcome = ({db}: Props) => {
 
     useEffect(() => {
         if(!user.firstName || !user.lastName) {
-            dispatch(fetchUserFromDb('foo', db));
+            dispatch(fetchUserFromDb('foo'));
         }
         return () => dispatch(userFetchReset());
-    }, [db, dispatch, user.firstName, user.lastName]);
+    }, [dispatch, user.firstName, user.lastName]);
 
     useEffect(() => {
         // no user, must be new!
@@ -34,7 +31,7 @@ const Welcome = ({db}: Props) => {
         }
     }, [preferences.brewMethod, preferences.company, preferences.origin, preferences.roastLevel, user.fetchSuccess, user.firstName, user.lastName]);
 
-    return user.isFetching && user.fetchSuccess === null ? <CircularProgress/> : isNewUser ? <Redirect to='/new-user'/> : <p>{'gotem'}</p>
+    return (user.isFetching && user.fetchSuccess === null) || isNewUser === null ? <CircularProgress/> : isNewUser ? <Redirect to='/new-user'/> : <Redirect to={'/home'}/>
 };
 
 export default Welcome;
