@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/img/newmoon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screen-layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screen-layout/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/my-coffees/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/my-coffees/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\VSTS\bean-bio\src\img" />
       <recent name="C:\Users\Alec Caputo\Documents\GitHub\bean-bio\src\img" />
       <recent name="C:\Users\Alec Caputo\Documents\GitHub\bean-bio\public" />
     </key>
@@ -74,7 +73,7 @@
       <workItem from="1574721105056" duration="21744000" />
       <workItem from="1574820359515" duration="7778000" />
       <workItem from="1574900614118" duration="7751000" />
-      <workItem from="1574976581112" duration="6171000" />
+      <workItem from="1574976581112" duration="8862000" />
     </task>
     <servers />
   </component>
