@@ -41,27 +41,28 @@ const NewCoffee = () => {
         brewMethod: '',
         flavorProfile: '',
         otherObservations: '',
+        name: '',
+        company: '',
         userId
     });
-    const classes= useStyles();
+    const classes = useStyles();
 
     const updateCoffee = (key, value) => setNewCoffee({...newCoffee, [key]: value});
 
-    const saveFunction = () =>  {
+    const saveFunction = () => {
         dispatch(saveCoffeeToDb(newCoffee));
     };
 
     useEffect(() => {
-        if(coffeeState.fetchSuccess) {
+        if (coffeeState.fetchSuccess) {
             history.push(HOME);
             dispatch(coffeesFetchReset())
         }
-    }, [coffeeState.fetchSuccess])
+    }, [coffeeState.fetchSuccess, dispatch, history]);
 
     return (
         <Navigation>
-        <ScreenLayout>
-            <div className={classes.container}>
+            <ScreenLayout>
                 <ContentLayout spacing={2}>
                     <TextField
                         label={'Brew Method'}
@@ -78,6 +79,16 @@ const NewCoffee = () => {
                             ))
                         }
                     </TextField>
+                    <TextField
+                        label={'Company'}
+                        value={newCoffee.company}
+                        onChange={e => updateCoffee('company', e.target.value)}
+                    />
+                    <TextField
+                        label={'Name'}
+                        value={newCoffee.name}
+                        onChange={e => updateCoffee('name', e.target.value)}
+                    />
                     <TextField
                         label={'Flavor Profile'}
                         value={newCoffee.flavorProfile}
@@ -100,11 +111,10 @@ const NewCoffee = () => {
                     />
                     <ActionButtons primaryAction={saveFunction}/>
                 </ContentLayout>
-            </div>
-        </ScreenLayout>
+            </ScreenLayout>
         </Navigation>
 
     );
-}
+};
 
 export default NewCoffee;

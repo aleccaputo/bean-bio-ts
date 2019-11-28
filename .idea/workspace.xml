@@ -2,34 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/action-buttons/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/content-layout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/is-existing-user/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/is-new-user/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navigation/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screen-layout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data-sources/coffees.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/img/coffee-bean.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/workflow/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/screens/my-coffees/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-sources/preferences.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/preferences.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-sources/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/is-existing-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/is-existing-user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/is-new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/is-new-user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data-sources/coffees.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/coffees.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ducks/preferencesDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/preferencesDuck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ducks/userDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/userDuck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/init/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/init/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/new-coffee/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-user/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/preferences/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/preferences/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/welcome/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/welcome/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/workflow/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/workflow/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +80,9 @@
       <option name="presentableId" value="Default" />
       <updated>1574621725229</updated>
       <workItem from="1574621729772" duration="2565000" />
-      <workItem from="1574721105056" duration="21615000" />
+      <workItem from="1574721105056" duration="21744000" />
+      <workItem from="1574820359515" duration="7778000" />
+      <workItem from="1574900614118" duration="2087000" />
     </task>
     <servers />
   </component>
@@ -118,7 +107,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/App.test.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

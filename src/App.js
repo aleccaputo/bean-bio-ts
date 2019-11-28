@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
-import Welcome from './screens/welcome';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import AppStore from './store/index';
 import NewUser from './screens/new-user';
@@ -13,10 +12,11 @@ import Home from './screens/home';
 import brown from '@material-ui/core/colors/brown';
 import orange from '@material-ui/core/colors/orange';
 import ScreenLayout from './components/screen-layout';
-import {HOME, INITIAL_PREFERENCES, NEW_COFFEE, NEW_USER} from './workflow';
+import {HOME, INITIAL_PREFERENCES, MY_COFFEES, NEW_COFFEE, NEW_USER} from './workflow';
 import IsNewUser from './components/is-new-user';
 import IsExistingUser from './components/is-existing-user';
 import NewCoffee from './screens/new-coffee';
+import MyCoffees from './screens/my-coffees';
 
 const App = () => (
     <Provider store={AppStore}>
@@ -48,6 +48,9 @@ const App = () => (
                                 </Route>
                                 <Route path={NEW_COFFEE}>
                                     <NewCoffee/>
+                                </Route>
+                                <Route path={MY_COFFEES}>
+                                    <MyCoffees/>
                                 </Route>
                             </Switch>
                         </Router>

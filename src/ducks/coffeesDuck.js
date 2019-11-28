@@ -3,6 +3,16 @@ import {createSlice} from '@reduxjs/toolkit';
 import {fetchCoffees, saveCoffees} from '../data-sources/coffees';
 import {ThunkDispatch} from 'redux-thunk';
 
+export type Coffee = {
+    rating: number,
+    brewMethod: string,
+    flavorProfile?: string | null,
+    otherObservations?: string | null,
+    name?: string | null,
+    company?: string | null,
+    userId: number | string
+};
+
 export type CoffeeState = {
     coffees: Array<Coffee> | [],
     fetchSuccess: boolean | null,
@@ -10,21 +20,16 @@ export type CoffeeState = {
     isFetching: boolean,
     hasBeenInitialized: boolean
 };
-export type Coffee = {
-    rating: number,
-    brewMethod: string,
-    flavorProfile?: string | null,
-    otherObservations?: string | null,
-    userId: number | string
-};
+
 type Action = {
     payload: Array<Coffee>,
     type: string,
     error: any
-}
+};
+
 const initialState: CoffeeState = {
     coffees: [],
-    fetchSuccess:  null,
+    fetchSuccess: null,
     fetchError: null,
     isFetching: false,
     hasBeenInitialized: null
@@ -54,7 +59,7 @@ const coffeesSlice = createSlice({
             ...state,
             fetchError: null,
             fetchSuccess: null,
-            isFetching: false,
+            isFetching: false
         })
     }
 });
@@ -82,9 +87,8 @@ export const saveCoffeeToDb = (coffee: Coffee) => async (dispatch: ThunkDispatch
     dispatch(coffeesFetchRequest());
     try {
         await saveCoffees(coffee);
-        dispatch(coffeesFetchSuccess(coffee));
+        dispatch(coffeesFetchSuccess([coffee]));
     } catch (e) {
-        debugger;
         dispatch(coffeesFetchFail(true))
     }
 };

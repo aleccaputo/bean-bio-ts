@@ -4,7 +4,6 @@ import {TextField, Button} from '@material-ui/core';
 import type {User, UserState} from '../../ducks/userDuck';
 import {useDispatch, useSelector} from 'react-redux';
 import {saveUserToDb} from '../../ducks/userDuck';
-import {Redirect} from 'react-router-dom';
 import ContentLayout from '../../components/content-layout';
 import {useHistory} from 'react-router-dom';
 import {INITIAL_PREFERENCES} from '../../workflow';
@@ -19,7 +18,7 @@ const NewUser = () => {
         if (userState.fetchSuccess && userState.firstName && userState.lastName) {
             history.push(INITIAL_PREFERENCES)
         }
-    }, [userState.fetchSuccess, userState.firstName, userState.lastName]);
+    }, [userState.fetchSuccess, userState.firstName, userState.lastName, history]);
 
     return (
         <ContentLayout>

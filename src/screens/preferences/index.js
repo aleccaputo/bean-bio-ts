@@ -35,7 +35,7 @@ const UserPreferences = () => {
         if(!user.firstName || !user.lastName) {
             history.push(NEW_USER);
         }
-    }, [user.firstName, user.lastName]);
+    }, [user.firstName, user.lastName, history]);
     const formIsValid = formPrefs.roastLevel && formPrefs.company && formPrefs.brewMethod && formPrefs.roastLevel;
 
     return (

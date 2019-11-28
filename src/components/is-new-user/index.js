@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import type {UserState} from '../../ducks/userDuck';
 import {useSelector} from 'react-redux';
 import type {PreferencesState} from '../../ducks/preferencesDuck';

@@ -6,7 +6,7 @@ const db = new Dexie('beanBio');
 db.version(1).stores({
     user: 'id, firstName, lastName',
     preferences: 'userId, roastLevel, brewMethod, origin, company',
-    coffees: '++id, userId, name, brewMethod, flavorProfile, rating, otherObservations'
+    coffees: '++id, userId, name, brewMethod, flavorProfile, rating, otherObservations, company'
 });
 
 export type BeanBioSchema = {
