@@ -17,6 +17,7 @@ import IsNewUser from './components/is-new-user';
 import IsExistingUser from './components/is-existing-user';
 import NewCoffee from './screens/new-coffee';
 import MyCoffees from './screens/my-coffees';
+import Navigation from './components/navigation';
 
 const App = () => (
     <Provider store={AppStore}>
@@ -42,17 +43,19 @@ const App = () => (
                     </IsNewUser>
                     <IsExistingUser>
                         <Router>
-                            <Switch>
-                                <Route exact={true} path={HOME}>
-                                    <Home/>
-                                </Route>
-                                <Route path={NEW_COFFEE}>
-                                    <NewCoffee/>
-                                </Route>
-                                <Route path={MY_COFFEES}>
-                                    <MyCoffees/>
-                                </Route>
-                            </Switch>
+                            <Navigation>
+                                <Switch>
+                                    <Route exact={true} path={[HOME, INITIAL_PREFERENCES]}>
+                                        <Home/>
+                                    </Route>
+                                    <Route path={NEW_COFFEE}>
+                                        <NewCoffee/>
+                                    </Route>
+                                    <Route path={MY_COFFEES}>
+                                        <MyCoffees/>
+                                    </Route>
+                                </Switch>
+                            </Navigation>
                         </Router>
                     </IsExistingUser>
                 </Init>

@@ -10,8 +10,8 @@ import {makeStyles} from '@material-ui/styles';
 
 const useStyles = makeStyles(theme => ({
     stickToBottom: {
-        width: '100%',
         position: 'fixed',
+        width: '100%',
         bottom: 0
     }
 }));

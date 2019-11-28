@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/screens/my-coffees/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/is-existing-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/is-existing-user/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/is-new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/is-new-user/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/navigation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navigation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-sources/coffees.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/coffees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/coffeesDuck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/init/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/init/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screen-layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screen-layout/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/new-coffee/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-user/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/preferences/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/preferences/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/workflow/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/workflow/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +35,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="C:/gitprojects/material-ui" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -82,7 +74,7 @@
       <workItem from="1574621729772" duration="2565000" />
       <workItem from="1574721105056" duration="21744000" />
       <workItem from="1574820359515" duration="7778000" />
-      <workItem from="1574900614118" duration="2087000" />
+      <workItem from="1574900614118" duration="7751000" />
     </task>
     <servers />
   </component>

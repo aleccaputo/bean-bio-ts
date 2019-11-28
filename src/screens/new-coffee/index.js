@@ -61,58 +61,54 @@ const NewCoffee = () => {
     }, [coffeeState.fetchSuccess, dispatch, history]);
 
     return (
-        <Navigation>
-            <ScreenLayout>
-                <ContentLayout spacing={2}>
-                    <TextField
-                        label={'Brew Method'}
-                        select={true}
-                        value={newCoffee.brewMethod}
-                        onChange={e => updateCoffee('brewMethod', e.target.value)}
-                        className={classes.select}
-                    >
-                        {
-                            Object.keys(BREW_METHODS).map(method => (
-                                <MenuItem key={method} value={method}>
-                                    {BREW_METHODS[method]}
-                                </MenuItem>
-                            ))
-                        }
-                    </TextField>
-                    <TextField
-                        label={'Company'}
-                        value={newCoffee.company}
-                        onChange={e => updateCoffee('company', e.target.value)}
-                    />
-                    <TextField
-                        label={'Name'}
-                        value={newCoffee.name}
-                        onChange={e => updateCoffee('name', e.target.value)}
-                    />
-                    <TextField
-                        label={'Flavor Profile'}
-                        value={newCoffee.flavorProfile}
-                        onChange={e => updateCoffee('flavorProfile', e.target.value)}
-                    />
-                    <TextField
-                        label={'Other Observations'}
-                        value={newCoffee.otherObservations}
-                        onChange={e => updateCoffee('otherObservations', e.target.value)}
-                    />
-                    <SvgIcon>
+        <ContentLayout direction={'column'} xs={12} spacing={2}>
+            <TextField
+                label={'Brew Method'}
+                select={true}
+                value={newCoffee.brewMethod}
+                onChange={e => updateCoffee('brewMethod', e.target.value)}
+                className={classes.select}
+            >
+                {
+                    Object.keys(BREW_METHODS).map(method => (
+                        <MenuItem key={method} value={method}>
+                            {BREW_METHODS[method]}
+                        </MenuItem>
+                    ))
+                }
+            </TextField>
+            <TextField
+                label={'Company'}
+                value={newCoffee.company}
+                onChange={e => updateCoffee('company', e.target.value)}
+            />
+            <TextField
+                label={'Name'}
+                value={newCoffee.name}
+                onChange={e => updateCoffee('name', e.target.value)}
+            />
+            <TextField
+                label={'Flavor Profile'}
+                value={newCoffee.flavorProfile}
+                onChange={e => updateCoffee('flavorProfile', e.target.value)}
+            />
+            <TextField
+                label={'Other Observations'}
+                value={newCoffee.otherObservations}
+                onChange={e => updateCoffee('otherObservations', e.target.value)}
+            />
+            <SvgIcon>
 
-                    </SvgIcon>
-                    <Rating
-                        name={'Rating'}
-                        value={newCoffee.rating}
-                        onChange={(e, newValue) => updateCoffee('rating', newValue)}
-                        emptyIcon={<CoffeeBeanIcon className={classes.beanDisabled}/>}
-                        icon={<CoffeeBeanIcon className={classes.bean}/>}
-                    />
-                    <ActionButtons primaryAction={saveFunction}/>
-                </ContentLayout>
-            </ScreenLayout>
-        </Navigation>
+            </SvgIcon>
+            <Rating
+                name={'Rating'}
+                value={newCoffee.rating}
+                onChange={(e, newValue) => updateCoffee('rating', newValue)}
+                emptyIcon={<CoffeeBeanIcon className={classes.beanDisabled}/>}
+                icon={<CoffeeBeanIcon className={classes.bean}/>}
+            />
+            <ActionButtons primaryAction={saveFunction}/>
+        </ContentLayout>
 
     );
 };
