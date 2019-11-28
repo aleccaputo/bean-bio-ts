@@ -42,17 +42,15 @@ const Home = () => {
     }, [history, route]);
 
     return (
-        <ScreenLayout>
-            <Navigation>
-                <Zoom
-                    mountOnEnter={true}
-                    timeout={transitionDuration}
-                    in={true}
-                    style={{
-                        transitionDelay: `${transitionDuration.exit}ms`,
-                    }}
-                    unmountOnExit={true}
-                >
+            <Zoom
+                mountOnEnter={true}
+                timeout={transitionDuration}
+                in={true}
+                style={{
+                    transitionDelay: `${transitionDuration.exit}ms`,
+                }}
+                unmountOnExit={true}
+            >
                 <Fab
                     color={'primary'}
                     className={classes.fab}
@@ -62,10 +60,7 @@ const Home = () => {
                 >
                     <CoffeeIcon/>
                 </Fab>
-                </Zoom>
-            </Navigation>
-        </ScreenLayout>
-
+            </Zoom>
     )
 };
 

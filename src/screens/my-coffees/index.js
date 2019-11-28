@@ -16,23 +16,16 @@ const MyCoffees = () => {
     }, [dispatch]);
 
     return coffees.coffees && !coffees.isFetching
-        ? (
-            <Navigation>
-                <ScreenLayout>
-                    {(coffees.coffees || []).map((coffee: Coffee, index) => (
-                        <Card key={index}>
-                            <CardContent>
-                                <Typography>{BREW_METHODS[coffee.brewMethod]}</Typography>
-                                <Typography>{`Rating: ${coffee.rating}`}</Typography>
-                                <Typography>{`Profile: ${coffee.flavorProfile}`}</Typography>
-                                <Typography>{`Notes: ${coffee.otherObservations}`}</Typography>
-                            </CardContent>
-                        </Card>
-                    ))}
-                </ScreenLayout>
-            </Navigation>
-        )
-        : <CircularProgress/>
+        ? (coffees.coffees || []).map((coffee: Coffee, index) => (
+            <Card key={index}>
+                <CardContent>
+                    <Typography>{BREW_METHODS[coffee.brewMethod]}</Typography>
+                    <Typography>{`Rating: ${coffee.rating}`}</Typography>
+                    <Typography>{`Profile: ${coffee.flavorProfile}`}</Typography>
+                    <Typography>{`Notes: ${coffee.otherObservations}`}</Typography>
+                </CardContent>
+            </Card>
+        )) : <CircularProgress/>
 };
 
 export default MyCoffees;

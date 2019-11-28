@@ -5,15 +5,15 @@ const useStyles = makeStyles(theme => ({
     background: {
         backgroundColor: theme.palette.background.default,
         height: 'calc(100vh - 60px)',
-        overflow: 'scroll'
-    }
+        overflowX: 'hidden'
+}
 }));
 const ScreenLayout = ({children}) => {
     const classes = useStyles();
     return (
-        <div className={classes.background}>
+        <main className={classes.background}>
             {children}
-        </div>
+        </main>
     )
 };
 
