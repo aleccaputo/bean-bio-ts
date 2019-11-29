@@ -6,6 +6,7 @@ import {coffeesFetchReset, fetchCoffeesFromDb} from '../../ducks/coffeesDuck';
 import ScreenLayout from '../../components/screen-layout';
 import Navigation from '../../components/navigation';
 import {BREW_METHODS} from '../../constants';
+import ReactGA from 'react-ga';
 
 const MyCoffees = () => {
     const coffees: CoffeeState = useSelector(state => state.coffees);
@@ -14,6 +15,9 @@ const MyCoffees = () => {
         dispatch(fetchCoffeesFromDb(1));
         return () => dispatch(coffeesFetchReset())
     }, [dispatch]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     return coffees.coffees && !coffees.isFetching
         ? (coffees.coffees || []).map((coffee: Coffee, index) => (

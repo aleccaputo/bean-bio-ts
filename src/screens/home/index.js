@@ -13,7 +13,7 @@ import Zoom from '@material-ui/core/Zoom';
 import CardMedia from "@material-ui/core/CardMedia";
 import NewMoon from '../../img/newmoon.png';
 import ContentLayout from "../../components/content-layout";
-
+import ReactGA from 'react-ga';
 
 const useStyles = makeStyles(() => ({
     stickToBottom: {
@@ -46,6 +46,9 @@ const Home = () => {
             history.replace(HOME);
         }
     }, [history, route]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     return (
         <>

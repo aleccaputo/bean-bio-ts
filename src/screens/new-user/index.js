@@ -7,6 +7,7 @@ import {saveUserToDb} from '../../ducks/userDuck';
 import ContentLayout from '../../components/content-layout';
 import {useHistory} from 'react-router-dom';
 import {INITIAL_PREFERENCES} from '../../workflow';
+import ReactGA from 'react-ga';
 
 const NewUser = () => {
     const userState: UserState = useSelector(state => state.user);
@@ -19,6 +20,9 @@ const NewUser = () => {
             history.push(INITIAL_PREFERENCES)
         }
     }, [userState.fetchSuccess, userState.firstName, userState.lastName, history]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     return (
         <ContentLayout>

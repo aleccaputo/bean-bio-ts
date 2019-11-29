@@ -18,6 +18,9 @@ import IsExistingUser from './components/is-existing-user';
 import NewCoffee from './screens/new-coffee';
 import MyCoffees from './screens/my-coffees';
 import Navigation from './components/navigation';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-135079071-2');
 
 const App = () => (
     <Provider store={AppStore}>

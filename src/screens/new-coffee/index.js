@@ -13,6 +13,7 @@ import {ReactComponent as CoffeeBeanIcon} from '../../img/coffee-bean.svg'
 import {coffeesFetchReset, saveCoffeeToDb} from '../../ducks/coffeesDuck';
 import {useHistory} from 'react-router-dom';
 import {HOME} from '../../workflow';
+import ReactGA from 'react-ga';
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -59,6 +60,9 @@ const NewCoffee = () => {
             dispatch(coffeesFetchReset())
         }
     }, [coffeeState.fetchSuccess, dispatch, history]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     return (
         <ContentLayout direction={'column'} xs={12} spacing={2}>

@@ -6,6 +6,7 @@ import {fetchUserFromDb, userFetchReset} from '../../ducks/userDuck';
 import {CircularProgress} from "@material-ui/core";
 import {Redirect} from "react-router-dom";
 import type {PreferencesState} from '../../ducks/preferencesDuck';
+import ReactGA from 'react-ga';
 
 const Welcome = () => {
     const user: UserState = useSelector(state => state.user);
@@ -30,6 +31,9 @@ const Welcome = () => {
             }
         }
     }, [preferences.brewMethod, preferences.company, preferences.origin, preferences.roastLevel, user.fetchSuccess, user.firstName, user.lastName]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
 
     return (user.isFetching && user.fetchSuccess === null) || isNewUser === null ? <CircularProgress/> : isNewUser ? <Redirect to='/new-user'/> : <Redirect to={'/home'}/>
 };

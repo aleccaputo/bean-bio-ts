@@ -9,6 +9,7 @@ import {useHistory} from 'react-router-dom';
 import ContentLayout from '../../components/content-layout';
 import {makeStyles} from '@material-ui/styles';
 import {NEW_USER} from '../../workflow';
+import ReactGA from 'react-ga';
 
 const useStyles = makeStyles(theme => ({
     select: {
@@ -36,6 +37,9 @@ const UserPreferences = () => {
             history.push(NEW_USER);
         }
     }, [user.firstName, user.lastName, history]);
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, []);
     const formIsValid = formPrefs.roastLevel && formPrefs.company && formPrefs.brewMethod && formPrefs.roastLevel;
 
     return (
