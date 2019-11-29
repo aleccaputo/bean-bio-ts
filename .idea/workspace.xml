@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/my-coffees/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/my-coffees/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/new-coffee/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-user/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/preferences/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/preferences/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/welcome/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/welcome/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +75,7 @@
       <workItem from="1574721105056" duration="21744000" />
       <workItem from="1574820359515" duration="7778000" />
       <workItem from="1574900614118" duration="7751000" />
-      <workItem from="1574976581112" duration="12395000" />
+      <workItem from="1574976581112" duration="13956000" />
     </task>
     <servers />
   </component>

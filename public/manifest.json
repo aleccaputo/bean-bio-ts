@@ -3,7 +3,7 @@
   "short_name": "Bean Bio",
   "theme_color": "#8d6e63",
   "background_color": "#fafafa",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
