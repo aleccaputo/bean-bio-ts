@@ -5,7 +5,7 @@ import {INITIAL_PREFERENCES, NEW_USER} from '../../workflow';
 const useStyles = makeStyles(theme => ({
     background: props => ({
         backgroundColor: theme.palette.background.default,
-        height: props.isNewUser ? '100vh' : 'calc(100vh - 60px)',
+        height: props.isNewUser ? '100vh' : 'calc(100vh - 56px)',
         overflowX: 'hidden'
     })
 }));
