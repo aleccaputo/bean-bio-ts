@@ -42,7 +42,7 @@ const coffeesSlice = createSlice({
         coffeesFetchRequest: (state: CoffeeState, action: Action): CoffeeState => ({...state, isFetching: true}),
         coffeesFetchSuccess: (state: CoffeeState, action: Action): CoffeeState => ({
             ...state,
-            coffees: action.payload,
+            coffees: [...state.coffees, ...action.payload],
             isFetching: false,
             fetchSuccess: true,
             hasBeenInitialized: true

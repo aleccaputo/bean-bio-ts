@@ -56,8 +56,8 @@ const NewCoffee = () => {
 
     useEffect(() => {
         if (coffeeState.fetchSuccess && hasClickedSave) {
+            dispatch(coffeesFetchReset());
             history.push(HOME);
-            dispatch(coffeesFetchReset())
         }
     }, [coffeeState.fetchSuccess, dispatch, history, hasClickedSave]);
     useEffect(() => {
