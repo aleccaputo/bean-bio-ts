@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import {Provider} from 'react-redux';
 import AppStore from './store/index';
 import NewUser from './screens/new-user';
@@ -12,13 +12,15 @@ import Home from './screens/home';
 import brown from '@material-ui/core/colors/brown';
 import orange from '@material-ui/core/colors/orange';
 import ScreenLayout from './components/screen-layout';
-import {HOME, INITIAL_PREFERENCES, MY_COFFEES, NEW_COFFEE, NEW_USER} from './workflow';
+import {HOME, INITIAL_PREFERENCES, MY_COFFEES, NEW_COFFEE, NEW_USER, PROFILE} from './workflow';
 import IsNewUser from './components/is-new-user';
 import IsExistingUser from './components/is-existing-user';
 import NewCoffee from './screens/new-coffee';
 import MyCoffees from './screens/my-coffees';
 import Navigation from './components/navigation';
 import ReactGA from 'react-ga';
+import Profile from "./screens/profile";
+import {humanizeTimeOfDay} from "./utilities";
 
 ReactGA.initialize('UA-135079071-2');
 
@@ -27,7 +29,8 @@ const App = () => (
         <ThemeProvider theme={createMuiTheme({
             palette: {
                 primary: brown,
-                secondary: orange
+                secondary: orange,
+                type: humanizeTimeOfDay() === 'Evening' ? 'dark' : 'light'
             }
         })}>
             <ScreenLayout>
@@ -35,7 +38,10 @@ const App = () => (
                     <IsNewUser>
                         <Router>
                             <Switch>
-                                <Route exact={true} path={NEW_USER}>
+                                <Route exact={true} path={'/'}>
+                                    <Redirect to={NEW_USER}/>
+                                </Route>
+                                <Route path={NEW_USER}>
                                     <NewUser/>
                                 </Route>
                                 <Route path={INITIAL_PREFERENCES}>
@@ -56,6 +62,9 @@ const App = () => (
                                     </Route>
                                     <Route path={MY_COFFEES}>
                                         <MyCoffees/>
+                                    </Route>
+                                    <Route path={PROFILE}>
+                                        <Profile/>
                                     </Route>
                                 </Switch>
                             </Navigation>

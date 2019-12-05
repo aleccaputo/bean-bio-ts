@@ -4,7 +4,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ListIcon from '@material-ui/icons/List';
 import HomeIcon from '@material-ui/icons/Home';
 import {useHistory, useRouteMatch, useLocation} from 'react-router-dom';
-import {HOME, MY_COFFEES, NEW_COFFEE} from '../../workflow';
+import {HOME, MY_COFFEES, NEW_COFFEE, PROFILE} from '../../workflow';
 import {makeStyles} from '@material-ui/styles';
 
 const getPageTitle = (pathName) => {
@@ -15,6 +15,8 @@ const getPageTitle = (pathName) => {
             return 'My Coffees';
         case NEW_COFFEE:
             return 'New Coffee';
+        case PROFILE:
+            return 'Profile';
         default:
             return '';
     }
@@ -36,6 +38,7 @@ const Navigation = ({children}) => {
     const history = useHistory();
     const homeRoute = useRouteMatch(HOME);
     const myCoffeesRoute = useRouteMatch(MY_COFFEES);
+    const profileRoute = useRouteMatch(PROFILE);
     const location = useLocation();
 
     const pageTitle = getPageTitle(location.pathname);
@@ -52,7 +55,7 @@ const Navigation = ({children}) => {
                 {children}
             </div>
             <BottomNavigation className={classes.stickToBottom}>
-                <BottomNavigationAction label={'Profile'} icon={<AccountCircleIcon/>}/>
+                <BottomNavigationAction label={'Profile'} icon={<AccountCircleIcon color={profileRoute && profileRoute.isExact ? 'secondary' : 'inherit'}/>} onClick={() => history.push(PROFILE)}/>
                 <BottomNavigationAction label={'Home'} icon={<HomeIcon color={homeRoute && homeRoute.isExact ? 'secondary' : 'inherit'}/>} onClick={() => history.push(HOME)}/>
                 <BottomNavigationAction label={'My Coffees'} icon={<ListIcon color={myCoffeesRoute && myCoffeesRoute.isExact ? 'secondary' : 'inherit'}/>} onClick={() => history.push(MY_COFFEES)}/>
             </BottomNavigation>
