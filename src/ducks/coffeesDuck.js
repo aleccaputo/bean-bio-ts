@@ -1,9 +1,10 @@
 // @flow
 import {createSlice} from '@reduxjs/toolkit';
-import {fetchCoffees, saveCoffees} from '../data-sources/coffees';
+import {deleteCoffee, fetchCoffees, saveCoffees} from '../data-sources/coffees';
 import {ThunkDispatch} from 'redux-thunk';
 
 export type Coffee = {
+    id?: number,
     rating: number,
     brewMethod: string,
     flavorProfile?: string | null,
@@ -42,10 +43,16 @@ const coffeesSlice = createSlice({
         coffeesFetchRequest: (state: CoffeeState, action: Action): CoffeeState => ({...state, isFetching: true}),
         coffeesFetchSuccess: (state: CoffeeState, action: Action): CoffeeState => ({
             ...state,
-            coffees: [...state.coffees, ...action.payload],
+            coffees: action.payload,
             isFetching: false,
             fetchSuccess: true,
             hasBeenInitialized: true
+        }),
+        coffeesAddSuccess: (state: CoffeeState, action: Action): CoffeeState => ({
+            ...state,
+            coffees: [...state.coffees, ...action.payload],
+            isFetching: false,
+            fetchSuccess: true
         }),
         coffeesFetchFail: (state: CoffeeState, action: Action): CoffeeState => ({
             ...state,
@@ -68,7 +75,8 @@ export const {
     coffeesFetchRequest,
     coffeesFetchSuccess,
     coffeesFetchFail,
-    coffeesFetchReset
+    coffeesFetchReset,
+    coffeesAddSuccess
 } = coffeesSlice.actions;
 
 export default coffeesSlice.reducer;
@@ -76,8 +84,8 @@ export default coffeesSlice.reducer;
 export const fetchCoffeesFromDb = (userId: number | string) => async (dispatch: ThunkDispatch<Action>) => {
     dispatch(coffeesFetchRequest());
     try {
-        const user = await fetchCoffees(userId);
-        dispatch(coffeesFetchSuccess(user))
+        const coffees = await fetchCoffees(userId);
+        dispatch(coffeesFetchSuccess(coffees))
     } catch (e) {
         dispatch(coffeesFetchFail(true))
     }
@@ -87,8 +95,18 @@ export const saveCoffeeToDb = (coffee: Coffee) => async (dispatch: ThunkDispatch
     dispatch(coffeesFetchRequest());
     try {
         await saveCoffees(coffee);
-        dispatch(coffeesFetchSuccess([coffee]));
+        dispatch(coffeesAddSuccess([coffee]));
     } catch (e) {
         dispatch(coffeesFetchFail(true))
+    }
+};
+
+export const deleteCoffeeFromDb = (coffeeId: number) => async (dispatch: ThunkDispatch<Action>) => {
+    dispatch(coffeesFetchRequest());
+    try {
+        await deleteCoffee(coffeeId);
+        dispatch(fetchCoffeesFromDb(1));
+    } catch (e) {
+        dispatch(coffeesFetchFail(true));
     }
 };
