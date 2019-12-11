@@ -32,7 +32,7 @@ const PersonalPreferences = ({updateFunction, currentState}: Props) => {
                 select={true}
             >
                 {
-                    Object.keys(BREW_METHODS).map(method => (
+                    Object.keys(BREW_METHODS).sort().map(method => (
                         <MenuItem key={method} value={method}>
                             {BREW_METHODS[method]}
                         </MenuItem>
@@ -64,7 +64,7 @@ const PersonalPreferences = ({updateFunction, currentState}: Props) => {
                 select={true}
             >
                 {
-                    Object.keys(COUNTRIES_OF_ORIGIN).map(country => (
+                    Object.keys(COUNTRIES_OF_ORIGIN).sort().map(country => (
                         <MenuItem key={country} value={country}>
                             {COUNTRIES_OF_ORIGIN[country]}
                         </MenuItem>

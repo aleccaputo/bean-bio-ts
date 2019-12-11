@@ -31,6 +31,11 @@ const App = () => (
                 primary: brown,
                 secondary: orange,
                 type: humanizeTimeOfDay() === 'Evening' ? 'dark' : 'light'
+            },
+            typography: {
+                button: {
+                    textTransform: 'none'
+                }
             }
         })}>
             <ScreenLayout>

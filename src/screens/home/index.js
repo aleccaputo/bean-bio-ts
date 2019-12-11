@@ -3,7 +3,7 @@ import type {UserState} from '../../ducks/userDuck';
 import {useSelector} from 'react-redux';
 import type {PreferencesState} from '../../ducks/preferencesDuck';
 import type {Coffee, CoffeeState} from "../../ducks/coffeesDuck";
-import {makeStyles, Fab, Card, CardContent, Typography, CardHeader, CardActions} from '@material-ui/core';
+import {makeStyles, Fab, Card, CardContent, Typography, CardHeader, CardActions, Paper} from '@material-ui/core';
 import {useHistory, useRouteMatch} from 'react-router-dom';
 import {HOME, INITIAL_PREFERENCES, NEW_COFFEE} from '../../workflow';
 import CoffeeIcon from '@material-ui/icons/LocalCafe';
@@ -16,6 +16,8 @@ import lightblue from '@material-ui/core/colors/lightBlue'
 import moment from 'moment';
 import {BREW_METHODS} from "../../constants";
 import Button from "@material-ui/core/Button";
+import AddIcon from '@material-ui/icons/Add';
+import {ReactComponent as CoffeeBeanIcon} from '../../img/coffee-bean.svg'
 
 const useStyles = makeStyles(theme => ({
     stickToBottom: {
@@ -33,8 +35,14 @@ const useStyles = makeStyles(theme => ({
     },
     welcomeCard: props => ({
         backgroundColor: props.timeOfDay === 'Morning' ? amber[400] : props.timeOfDay === 'Afternoon' ? lightblue[500] : theme.palette.secondary.main,
-        margin: theme.spacing(8, 1, 1, 1)
-    })
+        margin: theme.spacing(9, 1.5, 1, 1.5)
+    }),
+    otherCard: {
+        margin: theme.spacing(2, 1.5, 1, 1.5)
+    },
+    beanIcon: {
+        fill: theme.palette.primary.main
+    }
 }));
 const Home = () => {
     const user: UserState = useSelector(state => state.user);
@@ -86,9 +94,18 @@ const Home = () => {
                    }
                </CardContent>
                 <CardActions>
-                    <Button variant={'outlined'} onClick={() => history.push(NEW_COFFEE)}>{'Add New Coffee'}</Button>
+                    <Button variant={'outlined'} startIcon={<AddIcon/>} onClick={() => history.push(NEW_COFFEE)}>{'Add New Coffee'}</Button>
                 </CardActions>
             </Card>
+            { numberOfCoffees
+                ? <Card className={classes.otherCard}>
+                    <CardHeader
+                        avatar={<CoffeeBeanIcon className={classes.beanIcon}/>}
+                        title={`You've added ${numberOfCoffees} coffees to Bean Bio!`}
+                        subheader={'Keep it up!'}
+                    />
+                </Card> : null
+            }
             <Zoom
                 mountOnEnter={true}
                 timeout={transitionDuration}

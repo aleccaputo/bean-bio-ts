@@ -9,7 +9,8 @@ export const BREW_METHODS = {
     COLD_BREW: 'Cold Brew',
     TURKISH: 'Turkish',
     COWBOY: 'Cowboy',
-    POUR_OVER: 'Pour Over'
+    POUR_OVER: 'Pour Over',
+    DRIP: 'Drip'
 };
 
 export const ROAST_LEVELS = {
