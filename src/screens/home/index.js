@@ -18,6 +18,7 @@ import {BREW_METHODS} from "../../constants";
 import Button from "@material-ui/core/Button";
 import AddIcon from '@material-ui/icons/Add';
 import {ReactComponent as CoffeeBeanIcon} from '../../img/coffee-bean.svg'
+import {fetchRoasters} from "../../data-sources/coffees-api";
 
 const useStyles = makeStyles(theme => ({
     stickToBottom: {

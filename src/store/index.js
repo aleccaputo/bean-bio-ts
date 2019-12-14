@@ -1,6 +1,7 @@
 import UserReducer from '../ducks/userDuck';
 import PreferencesReducer from '../ducks/preferencesDuck';
 import CoffeesReducer from '../ducks/coffeesDuck';
+import LocalCoffeesReducer from '../ducks/localCoffeesDuck';
 import {configureStore, getDefaultMiddleware} from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
 
@@ -23,7 +24,8 @@ const store = configureStore({
     reducer: {
         user: UserReducer,
         preferences: PreferencesReducer,
-        coffees: CoffeesReducer
+        coffees: CoffeesReducer,
+        localCoffees: LocalCoffeesReducer
     },
     middleware: [...getDefaultMiddleware(), thunk, logger]
 });

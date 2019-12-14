@@ -7,11 +7,14 @@ import {fetchUserFromDb} from '../../ducks/userDuck';
 import {fetchPreferencesFromDb} from '../../ducks/preferencesDuck';
 import type {CoffeeState} from "../../ducks/coffeesDuck";
 import {fetchCoffeesFromDb} from "../../ducks/coffeesDuck";
+import type {LocalCoffeeState} from "../../ducks/localCoffeesDuck";
+import {getRoasters} from "../../ducks/localCoffeesDuck";
 
 const Init = ({children}) => {
     const user: UserState = useSelector(state => state.user);
     const preferences: PreferencesState = useSelector(state => state.preferences);
     const coffees: CoffeeState = useSelector(state => state.coffees);
+    const localCoffees: LocalCoffeeState = useSelector(state => state.localCoffees);
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -24,7 +27,10 @@ const Init = ({children}) => {
         if(!coffees.hasBeenInitialized && !coffees.isFetching) {
             dispatch(fetchCoffeesFromDb(1));
         }
-    }, [dispatch, preferences.hasBeenInitialized, preferences.isFetching, user.hasBeenInitialized, user.isFetching, coffees.isFetching, coffees.hasBeenInitialized]);
+        if(!localCoffees.hasFetchedRoasters && !localCoffees.isFetchingRoasters) {
+            dispatch(getRoasters('vt'));
+        }
+    }, [dispatch, preferences.hasBeenInitialized, preferences.isFetching, user.hasBeenInitialized, user.isFetching, coffees.isFetching, coffees.hasBeenInitialized, localCoffees.hasFetchedRoasters, localCoffees.isFetchingRoasters]);
     return user.hasBeenInitialized && preferences.hasBeenInitialized && coffees.hasBeenInitialized ? children : <CircularProgress/>
 };
 

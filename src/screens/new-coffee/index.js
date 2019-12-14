@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import type {Coffee, CoffeeState} from '../../ducks/coffeesDuck';
 import {useDispatch, useSelector} from 'react-redux';
 import {makeStyles, MenuItem, TextField, Paper} from '@material-ui/core';
-import {Rating} from '@material-ui/lab';
+import {Rating, Autocomplete} from '@material-ui/lab';
 import ContentLayout from '../../components/content-layout';
 import ActionButtons from '../../components/action-buttons';
 import {BREW_METHODS} from '../../constants';
@@ -18,7 +18,8 @@ const useStyles = makeStyles(theme => ({
         paddingTop: theme.spacing(4)
     },
     select: {
-        width: '50%',
+        width: 200,
+        maxWidth: 200,
         textAlign: 'left'
     },
     bean: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 const NewCoffee = () => {
     const userId: string = useSelector(state => state.user.id);
     const coffeeState: CoffeeState = useSelector(state => state.coffees);
+    const roasters: Array<string> = useSelector(state => state.localCoffees.roasters);
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -82,10 +84,10 @@ const NewCoffee = () => {
                         ))
                     }
                 </TextField>
-                <TextField
-                    label={'Company'}
-                    value={newCoffee.company}
-                    onChange={e => updateCoffee('company', e.target.value)}
+                <Autocomplete
+                    freeSolo={true}
+                    options={roasters.map(roaster => roaster)}
+                    renderInput={params => <TextField {...params} value={newCoffee.company} label={'Roaster'} className={classes.select} onChange={e => updateCoffee('company', e.target.value)}/>}
                 />
                 <TextField
                     label={'Name'}
