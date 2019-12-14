@@ -18,8 +18,7 @@ const useStyles = makeStyles(theme => ({
         paddingTop: theme.spacing(4)
     },
     select: {
-        width: 200,
-        maxWidth: 200,
+        minWidth: 200,
         textAlign: 'left'
     },
     bean: {
