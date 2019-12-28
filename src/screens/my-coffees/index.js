@@ -9,6 +9,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import DownArrow from '@material-ui/icons/ArrowDownward';
 import UpArrow from '@material-ui/icons/ArrowUpward';
+import CoffeeRating from "../../components/coffee-rating";
 
 const sortableFields = {
     RATING: 'Rating',
@@ -92,10 +93,10 @@ const MyCoffees = () => {
                                 <ListItemIcon>
                                     <DeleteIcon onClick={() => dispatch(deleteCoffeeFromDb(coffee.id))}/>
                                 </ListItemIcon>
-                                <ListItemText primaryTypographyProps={{color: 'textPrimary'}} primary={`${coffee.company} ${coffee.name}`} secondary={`${coffee.rating} stars`}/>
-{/*                                <ListItemSecondaryAction>
-                                    <EditIcon color={'secondary'}/>
-                                </ListItemSecondaryAction>*/}
+                                <ListItemText primaryTypographyProps={{color: 'textPrimary'}} primary={coffee.name} secondary={coffee.company}/>
+                               <ListItemSecondaryAction>
+                                    <CoffeeRating rating={coffee.rating} onRatingChange={null} readOnly={true} beanWidth={20}/>
+                                </ListItemSecondaryAction>
                             </ListItem>
                             <Divider variant='fullWidth' component='li' />
                         </>

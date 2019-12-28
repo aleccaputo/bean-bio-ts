@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import type {UserState} from '../../ducks/userDuck';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import type {PreferencesState} from '../../ducks/preferencesDuck';
 import type {Coffee, CoffeeState} from "../../ducks/coffeesDuck";
 import {makeStyles, Fab, Card, CardContent, Typography, CardHeader, CardActions, Paper} from '@material-ui/core';
@@ -19,6 +19,8 @@ import Button from "@material-ui/core/Button";
 import AddIcon from '@material-ui/icons/Add';
 import {ReactComponent as CoffeeBeanIcon} from '../../img/coffee-bean.svg'
 import {fetchRoasters} from "../../data-sources/coffees-api";
+import {getRoasters} from "../../ducks/localCoffeesDuck";
+import type {LocalCoffeeState} from "../../ducks/localCoffeesDuck";
 
 const useStyles = makeStyles(theme => ({
     stickToBottom: {
@@ -47,6 +49,7 @@ const useStyles = makeStyles(theme => ({
 }));
 const Home = () => {
     const user: UserState = useSelector(state => state.user);
+    const localCoffees: LocalCoffeeState = useSelector(state => state.localCoffees);
     const preferences: PreferencesState = useSelector(state => state.preferences);
     const coffees: CoffeeState = useSelector(state => state.coffees);
 
@@ -55,6 +58,7 @@ const Home = () => {
     const theme = useTheme();
     const history = useHistory();
     const route = useRouteMatch(INITIAL_PREFERENCES);
+    const dispatch = useDispatch();
 
     const transitionDuration = {
         enter: theme.transitions.duration.enteringScreen,
@@ -66,6 +70,13 @@ const Home = () => {
             history.replace(HOME);
         }
     }, [history, route]);
+
+    useEffect(() => {
+        // if we didn't get the roasters on init, go get them now
+        if(!localCoffees.isFetchingRoasters && !localCoffees.hasFetchedRoasters) {
+            dispatch(getRoasters(user.state || 'vt'));
+        }
+    }, [user.state, dispatch, localCoffees.isFetchingRoasters, localCoffees.hasFetchedRoasters]);
 
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);

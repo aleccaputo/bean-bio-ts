@@ -5,7 +5,9 @@ export const fetchUser = async (id: string): Promise<User> => {
     const dbUser = await db.user.get(1);
     return {
         firstName: (dbUser || {}).firstName || null,
-        lastName: (dbUser || {}).lastName || null
+        lastName: (dbUser || {}).lastName || null,
+        state: (dbUser || {}).state || null,
+        city: (dbUser || {}).city || null,
     }
 };
 

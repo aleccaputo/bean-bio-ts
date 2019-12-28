@@ -1,6 +1,6 @@
 // @flow
 import React, {useEffect, useState} from 'react';
-import {TextField, Button, Typography, Paper} from '@material-ui/core';
+import {TextField, Button, Typography, Paper, MenuItem} from '@material-ui/core';
 import type {User, UserState} from '../../ducks/userDuck';
 import {useDispatch, useSelector} from 'react-redux';
 import {saveUserToDb} from '../../ducks/userDuck';
@@ -9,11 +9,16 @@ import {useHistory} from 'react-router-dom';
 import {INITIAL_PREFERENCES} from '../../workflow';
 import ReactGA from 'react-ga';
 import {makeStyles} from "@material-ui/styles";
+import StateSelector from "../../components/state-selector";
 
 const useStyles = makeStyles(theme => ({
     paper: {
         marginTop: theme.spacing(2),
         paddingBottom: theme.spacing(2)
+    },
+    select: {
+        minWidth: 200,
+        textAlign: 'left'
     }
 }));
 
@@ -21,8 +26,8 @@ const NewUser = () => {
     const userState: UserState = useSelector(state => state.user);
     const dispatch = useDispatch();
     const history = useHistory();
-    const [formUser: User, setFormUser] = useState({firstName: '', lastName: '', id: 1});
-    const formIsValid = formUser.lastName && formUser.lastName;
+    const [formUser: User, setFormUser] = useState({firstName: '', lastName: '', id: 1, state: '', city: ''});
+    const formIsValid = formUser.lastName && formUser.lastName && formUser.state && formUser.city;
     const classes = useStyles();
 
     useEffect(() => {
@@ -33,6 +38,8 @@ const NewUser = () => {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
+
+    const updateUsersState = (state) => setFormUser({...formUser, state});
 
     return (
         <Paper className={classes.paper}>
@@ -48,6 +55,16 @@ const NewUser = () => {
                     label={'Last Name'}
                     value={formUser.lastName}
                     onChange={e => setFormUser({...formUser, lastName: e.target.value})}
+                />
+                <StateSelector
+                    currentState={formUser.state}
+                    className={classes.select}
+                    updateState={updateUsersState}
+                />
+                <TextField
+                    label={'City'}
+                    value={formUser.city}
+                    onChange={e => setFormUser({...formUser, city: e.target.value})}
                 />
                 <Button
                     variant={'contained'}

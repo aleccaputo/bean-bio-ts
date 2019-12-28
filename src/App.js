@@ -23,6 +23,9 @@ import Profile from "./screens/profile";
 import {humanizeTimeOfDay} from "./utilities";
 
 ReactGA.initialize('UA-135079071-2');
+if(window.location.hostname === 'localhost') {
+    window['ga-disable-UA-135079071-2'] = true;
+}
 
 const App = () => (
     <Provider store={AppStore}>

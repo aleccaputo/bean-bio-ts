@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59fc6ce7-6961-4a60-b1d5-2cafeabf5957" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/coffee-rating/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/state-selector/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data-sources/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-sources/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ducks/userDuck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ducks/userDuck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/home/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/home/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/init/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/init/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/my-coffees/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/my-coffees/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/screens/new-coffee/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-coffee/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/new-user/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/new-user/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/profile/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +104,8 @@
       <workItem from="1575071261447" duration="9746000" />
       <workItem from="1575149951297" duration="7047000" />
       <workItem from="1575414032625" duration="34318000" />
-      <workItem from="1576105132178" duration="11042000" />
+      <workItem from="1576105132178" duration="12603000" />
+      <workItem from="1577302755389" duration="9635000" />
     </task>
     <servers />
   </component>
@@ -127,20 +139,20 @@
       <screen x="0" y="-1440" width="2560" height="1400" />
     </state>
     <state x="92" y="-1348" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1664.1069/0.-1440.2560.1400@0.-1440.2560.1400" timestamp="1576029892526" />
-    <state x="518" y="116" width="629" height="837" key="find.popup" timestamp="1576358098013">
+    <state x="518" y="116" width="629" height="837" key="find.popup" timestamp="1577562185123">
       <screen x="0" y="0" width="1664" height="1069" />
     </state>
     <state x="797" y="-1288" width="968" height="1097" key="find.popup/0.0.1664.1069/0.-1440.2560.1400@0.-1440.2560.1400" timestamp="1576027861005" />
-    <state x="518" y="116" width="629" height="837" key="find.popup/0.0.1664.1069@0.0.1664.1069" timestamp="1576358098013" />
+    <state x="518" y="116" width="629" height="837" key="find.popup/0.0.1664.1069@0.0.1664.1069" timestamp="1577562185123" />
     <state x="936" y="-389" key="run.anything.popup" timestamp="1575501344823">
       <screen x="0" y="-1440" width="2560" height="1400" />
     </state>
     <state x="936" y="-389" key="run.anything.popup/0.0.1664.1069/0.-1440.2560.1400@0.-1440.2560.1400" timestamp="1575501344823" />
-    <state x="495" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1576356405484">
+    <state x="495" y="233" width="672" height="678" key="search.everywhere.popup" timestamp="1577566524018">
       <screen x="0" y="0" width="1664" height="1069" />
     </state>
     <state x="810" y="-1051" width="673" height="679" key="search.everywhere.popup/0.0.1664.1069/0.-1440.2560.1400@0.-1440.2560.1400" timestamp="1576197677780" />
-    <state x="495" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1664.1069@0.0.1664.1069" timestamp="1576356405484" />
+    <state x="495" y="233" width="672" height="678" key="search.everywhere.popup/0.0.1664.1069@0.0.1664.1069" timestamp="1577566524018" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

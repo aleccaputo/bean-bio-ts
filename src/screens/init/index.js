@@ -27,8 +27,8 @@ const Init = ({children}) => {
         if(!coffees.hasBeenInitialized && !coffees.isFetching) {
             dispatch(fetchCoffeesFromDb(1));
         }
-        if(!localCoffees.hasFetchedRoasters && !localCoffees.isFetchingRoasters) {
-            dispatch(getRoasters('vt'));
+        if(!localCoffees.hasFetchedRoasters && !localCoffees.isFetchingRoasters && user.hasBeenInitialized) {
+            dispatch(getRoasters(user.state || 'vt'));
         }
     }, [dispatch, preferences.hasBeenInitialized, preferences.isFetching, user.hasBeenInitialized, user.isFetching, coffees.isFetching, coffees.hasBeenInitialized, localCoffees.hasFetchedRoasters, localCoffees.isFetchingRoasters]);
     return user.hasBeenInitialized && preferences.hasBeenInitialized && coffees.hasBeenInitialized ? children : <CircularProgress/>

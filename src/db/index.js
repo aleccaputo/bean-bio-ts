@@ -4,7 +4,7 @@ import Dexie from "dexie";
 const db = new Dexie('beanBio');
 
 db.version(1).stores({
-    user: 'id, firstName, lastName',
+    user: 'id, firstName, lastName, state, city',
     preferences: 'userId, roastLevel, brewMethod, origin, company',
     coffees: '++id, userId, name, brewMethod, flavorProfile, rating, otherObservations, company'
 });

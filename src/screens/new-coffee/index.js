@@ -12,6 +12,8 @@ import {coffeesFetchReset, saveCoffeeToDb} from '../../ducks/coffeesDuck';
 import {useHistory} from 'react-router-dom';
 import {HOME} from '../../workflow';
 import ReactGA from 'react-ga';
+import type {UserState} from "../../ducks/userDuck";
+import CoffeeRating from "../../components/coffee-rating";
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -20,17 +22,11 @@ const useStyles = makeStyles(theme => ({
     select: {
         minWidth: 200,
         textAlign: 'left'
-    },
-    bean: {
-        fill: theme.palette.primary.main
-    },
-    beanDisabled: {
-        fill: theme.palette.action.disabled
     }
 }));
 
 const NewCoffee = () => {
-    const userId: string = useSelector(state => state.user.id);
+    const user: UserState = useSelector(state => state.user);
     const coffeeState: CoffeeState = useSelector(state => state.coffees);
     const roasters: Array<string> = useSelector(state => state.localCoffees.roasters);
     const dispatch = useDispatch();
@@ -44,7 +40,7 @@ const NewCoffee = () => {
         otherObservations: '',
         name: '',
         company: '',
-        userId
+        userId: user.id
     });
     const classes = useStyles();
 
@@ -55,12 +51,17 @@ const NewCoffee = () => {
         dispatch(saveCoffeeToDb(newCoffee));
     };
 
+    const updateRating = (rating) => {
+        updateCoffee('rating', rating);
+    };
+
     useEffect(() => {
         if (coffeeState.fetchSuccess && hasClickedSave) {
             dispatch(coffeesFetchReset());
             history.push(HOME);
         }
     }, [coffeeState.fetchSuccess, dispatch, history, hasClickedSave]);
+
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
@@ -76,7 +77,7 @@ const NewCoffee = () => {
                     className={classes.select}
                 >
                     {
-                        Object.keys(BREW_METHODS).map(method => (
+                        Object.keys(BREW_METHODS).sort().map(method => (
                             <MenuItem key={method} value={method}>
                                 {BREW_METHODS[method]}
                             </MenuItem>
@@ -106,13 +107,7 @@ const NewCoffee = () => {
                 <SvgIcon>
 
                 </SvgIcon>
-                <Rating
-                    name={'Rating'}
-                    value={newCoffee.rating}
-                    onChange={(e, newValue) => updateCoffee('rating', newValue)}
-                    emptyIcon={<CoffeeBeanIcon className={classes.beanDisabled}/>}
-                    icon={<CoffeeBeanIcon className={classes.bean}/>}
-                />
+                <CoffeeRating rating={newCoffee.rating} onRatingChange={updateRating}/>
                 <ActionButtons primaryAction={saveFunction}/>
             </ContentLayout>
         </Paper>

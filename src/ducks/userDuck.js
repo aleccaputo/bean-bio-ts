@@ -6,6 +6,8 @@ import {ThunkDispatch} from 'redux-thunk';
 export type UserState = {
     firstName: string | null,
     lastName: string | null,
+    city: string | null,
+    state: string | null,
     id: string | number,
     fetchSuccess: boolean | null,
     fetchError: boolean | null,
@@ -15,6 +17,8 @@ export type UserState = {
 export type User = {
     firstName: string,
     lastName: string,
+    city: string | null,
+    state: string | null,
     id: string | number
 };
 type Action = {
@@ -26,6 +30,8 @@ const initialState: UserState = {
     firstName: null,
     lastName: null,
     fetchError: null,
+    city: null,
+    state: null,
     fetchSuccess: null,
     isFetching: false,
     hasBeenInitialized: false,
@@ -41,6 +47,8 @@ const userSlice = createSlice({
             ...state,
             firstName: action.payload.firstName,
             lastName: action.payload.lastName,
+            state: action.payload.state,
+            city: action.payload.city,
             isFetching: false,
             fetchSuccess: true,
             hasBeenInitialized: true
