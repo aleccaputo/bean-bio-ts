@@ -5,6 +5,7 @@ To start:
 ### `npm start`
 
 The app is built using:
+<br/>Typescript
 <br/>React https://reactjs.org/
 <br/>Redux https://redux.js.org/
 <br/>Dexie.js, a wrapper for IndexDb https://dexie.org/
